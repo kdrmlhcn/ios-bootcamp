@@ -61,3 +61,55 @@ struct Information {
 let infoData = getInfoData()
 print(infoData)
 print(infoData.title)
+
+let optionalValue: String? = "S"
+print("optional: \(optionalValue)")
+
+var SurveyAnswer: String?
+print("Survey Answer: \(SurveyAnswer)")
+
+func test(_ arg: String? = nil) -> String {
+    guard let value = arg else { return "Missing Argument Value" }
+    print("value: \(value)")
+    return value.uppercased()
+    
+    /*if let value = arg {
+        print("value: \(value)")
+        return value.uppercased()
+    }
+    return "Missing Argument Value"*/
+}
+
+print("result: \(test("deneme"))")
+
+var testVariable: Int = 3 // Type Safe
+var testVariable2 = 3 // Type Inference
+
+var integerArray = [1, 2, 3, 4]
+for (index, element) in integerArray.enumerated() {
+  print("Item \(index): \(element)")
+}
+
+let allowedEntry = false
+if !allowedEntry {
+    print("Access Denied")
+}
+
+var string1 = "test "
+var string2 = "test"
+
+func stringOperation() -> Bool {
+    let first = string1.trimmingCharacters(in: CharacterSet.init(charactersIn: " "))
+    let second = string2.trimmingCharacters(in: CharacterSet.init(charactersIn: " "))
+    
+    return first == second
+}
+
+stringOperation()
+
+var statement = "test flight hello world"
+let x = statement.split(separator: " ")
+
+for item in x {
+    print(item)
+}
